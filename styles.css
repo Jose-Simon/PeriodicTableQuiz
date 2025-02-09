@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    background-color: #0044cc;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0044cc;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #003399;
+}
+
+#message {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: darkred;
+}
+
+.progressBar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: blue;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}

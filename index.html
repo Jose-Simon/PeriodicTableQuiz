@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">Periodic Table Quiz</h1>
+    
+     <div id="quizOptions" class="container">
+        <h2>Select Quiz Options</h2>
+        <label for="quizOn">Quiz On:</label>
+        <select id="quizOn">
+            <option value="name" selected>Name</option>
+            <option value="symbol">Symbol</option>
+            <option value="atomicNumber">Atomic Number</option>
+            <option value="state">State</option>
+            <option value="family">Family</option>
+        </select>
+
+        <label for="clue">Clue:</label>
+        <select id="clue">
+            <option value="name">Name</option>
+            <option value="symbol" selected>Symbol</option>
+            <option value="atomicNumber">Atomic Number</option>
+        </select>
+        
+        <button id="startQuizButton">Start Quiz</button>
+    </div>
+    
+    <div id="quizContainer" class="container" style="display:none;">
+        <p><strong>Question: </strong><span id="questionCounter">1</span> | <strong>Points: </strong><span id="totalPoints">0</span> | <strong>Time: </strong><span id="timer">0:00</span></p>
+        <div class="progressBar">
+            <div id="progress" class="progress"></div>
+        </div>
+
+        <p id="categoryDisplay"></p>
+        <p><strong><span id="clueLabel"></span></strong>: <span id="clueDisplay"></span></p>
+        
+        <input type="text" id="userAnswer" placeholder="Enter your answer">
+        <p id="message"></p>
+        
+        <button id="skipButton">Skip Question</button>
+        <button id="endQuizButton">End Quiz</button>
+
+        <div id="elementDetails" style="display:none;">
+            <h3>Element Details</h3>
+            <p>Element Name: <span id="elementName"></span></p>
+            <p>Symbol: <span id="elementSymbol"></span></p>
+            <p>Atomic Number: <span id="elementNumber"></span></p>
+            <p>State: <span id="elementState"></span></p>
+            <p>Family: <span id="elementFamily"></span></p>
+        </div>
+
+        <p id="maxPointsDisplay">Maximum possible points: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
