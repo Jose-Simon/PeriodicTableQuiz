@@ -249,7 +249,6 @@ function nextQuestion() {
 
     document.getElementById("clueLabel").textContent = clue.charAt(0).toUpperCase() + clue.slice(1);
     document.getElementById("clueDisplay").textContent = question[clue];
-
     document.getElementById("userAnswer").value = "";
     document.getElementById("message").textContent = "";
     document.getElementById("message").className = "";
@@ -265,10 +264,6 @@ function nextQuestion() {
 }
 
 function checkAnswer() {
-    if (currentQuestionIndex >= totalQuestions) {
-        endQuiz();
-        return;
-    }
 
     const userAnswer = document.getElementById("userAnswer").value.trim().toLowerCase();
     const currentQuestion = questions[currentQuestionIndex];  
@@ -277,6 +272,7 @@ function checkAnswer() {
 
     if (userAnswer === correctAnswer) {
         totalPoints += category.points;
+		document.getElementById("totalPoints").textContent = totalPoints;
         document.getElementById("message").textContent = "Correct!";
         document.getElementById("message").className = "correct";
         
@@ -296,17 +292,12 @@ function checkAnswer() {
         if (attempts >= 1) {
             document.getElementById("message").textContent = `Incorrect! Correct Answer: ${currentQuestion[quizOn]}`;
             document.getElementById("message").className = "incorrect";
-            attempts = 0;
-
-            showElementDetails(currentQuestion);
-            currentQuestionIndex++;  
-
-            if (currentQuestionIndex >= totalQuestions) {
+            if (currentQuestionIndex+1 >= totalQuestions) {
                 endQuiz();
                 return;
             }
 
-            setTimeout(nextQuestion, 1000);
+            setTimeout(skipQuestion, 1000);
 
         } else {
             attempts++;
@@ -315,22 +306,37 @@ function checkAnswer() {
         }
     }
 
-    document.getElementById("totalPoints").textContent = totalPoints;
+	if (currentQuestionIndex >= totalQuestions) {
+        endQuiz();
+        return;
+    }
 }
 
 function skipQuestion() {
     attempts = 0;
     maxPoints -= QUESTION_SEQUENCE[currentCategory].points;
+	const currentQuestion = questions[currentQuestionIndex];  
+	showElementDetails(currentQuestion);
     document.getElementById("maxPointsDisplay").textContent = `Maximum possible points: ${maxPoints}`;
     currentQuestionIndex++;
+	if (currentQuestionIndex >= totalQuestions) {
+		endQuiz();
+		return;
+	}
     nextQuestion();
 }
 
 function endQuiz() {
     clearInterval(timerInterval);
 	quizEnded = true;  // Mark quiz as ended
-    document.getElementById("completionMessage").textContent = "Quiz Ended!";
-    document.getElementById("quizContainer").style.display = "none";
+	
+    const messageElement = document.getElementById("completionMessage");
+	if (messageElement) {
+        messageElement.textContent = "Quiz Ended!";
+        messageElement.style.display = "block";
+    } else {
+        console.error("completionMessage element not found in the DOM.");
+    }
 }
 
 function showElementDetails(element) {
