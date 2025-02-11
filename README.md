@@ -2,7 +2,7 @@
 
 The **Periodic Table Quiz Game** is an interactive web-based quiz on elements of the periodic table. Players answer questions based on selected quiz options such as **Element Name, Symbol, Atomic Number, or Family**.
 
-🎨 Designed by **Jose Simon**. Programming assistance by **ChatGPT**.
+## 🎨 Designed by **Jose Simon**
 
 ## 🚀 Features
 - Multiple quiz modes: Identify elements based on **name, symbol, or atomic number**.
