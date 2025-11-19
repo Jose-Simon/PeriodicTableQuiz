@@ -131,11 +131,11 @@ const elements = [
 ];	
 
 const QUESTION_SEQUENCE = [
-    { type: 'Level 1', limit: 3, points: 1, questionsAsked: 0 },
-    { type: 'Level 2', limit: 3, points: 2, questionsAsked: 0 },
-    { type: 'Level 3', limit: 2, points: 3, questionsAsked: 0 },
-    { type: 'Level 4', limit: 1, points: 4, questionsAsked: 0 },
-    { type: 'Level 5', limit: 1, points: 5, questionsAsked: 0 }
+    { type: 'Level 1', limit: 9, points: 1, questionsAsked: 0 },
+    { type: 'Level 2', limit: 9, points: 2, questionsAsked: 0 },
+    { type: 'Level 3', limit: 6, points: 3, questionsAsked: 0 },
+    { type: 'Level 4', limit: 3, points: 4, questionsAsked: 0 },
+    { type: 'Level 5', limit: 3, points: 5, questionsAsked: 0 }
 ];
 let currentCategory = 0;
 
