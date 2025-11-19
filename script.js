@@ -6,7 +6,7 @@ let totalPoints = 0, maxPoints = 0, attempts = 0;
 let recentQuestions = [];
 let timerInterval, timeElapsed = 0, timerStarted = false;
 let quizEnded = false;
-let totalQuestions = 10;
+let totalQuestions = 30;
 
 // Reference elements
 const elements = [
@@ -346,4 +346,5 @@ function showElementDetails(element) {
     document.getElementById("elementNumber").textContent = element.atomicNumber																
     document.getElementById("elementState").textContent = element.state;
     document.getElementById("elementFamily").textContent = element.family;
+
 }
